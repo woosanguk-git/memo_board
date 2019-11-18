@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Comfortaa:400,500,600,700&display=swap');
+@import "reset.css";
+@import "memo.css";
+@import "memo-contents.css";
+
+* {
+  box-sizing: border-box;
+  /* 패딩이 있어도 박스크기를 패딩만큼 늘리지 않고 그대로 유지.
+    => 아네 들어있는 컨텐츠가 밀리지 않는다. */
+}
+/* html{
+  height: 100%;
+} */
+body {
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}

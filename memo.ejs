@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>메모장</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="/"><h1 class="header__title title">MEMO NOTE</h1></a>
+    </header>
+    <div class="memo-body">
+      <div class="control-buttons">
+        <a href="create"><button class="control-buttons__button-column">글쓰기</button></a>
+        <form action="delete_process" method="post">
+          <input type="hidden" name="memo_id" value="<%=memoData[0].id%>" />
+          <!-- <input type="submit" value="글삭제" /> -->
+          <button type="submit" class="control-buttons__button-column">글삭제</button>
+        </form>
+        <form action="update" method="post">
+          <input type="hidden" name="memo_id" value="<%=memoData[0].id%>" />
+          <!-- <input type="submit" value="글수정" /> -->
+          <button type="submit" class="control-buttons__button-column">글수정</button>
+        </form>
+      </div>
+      <div class="memo-content">
+        
+        <table class="memo-contents-table">
+          <caption class="memo-contents-table__caption">
+            NOTE
+          </caption>
+          <tbody class="memo-contents-table__tbody content-table-tbody">
+            <tr class="content-table-tbody__tr">
+              <th class="content-table-tbody__title"><%= memoData[0].title%></th>
+            </tr>
+            <tr>
+              <th class="content-table-tbody__content"><%= memoData[0].content %></th>
+            </tr>
+            <tr>
+              <th class="content-table-tbody__credate">작성 날짜 : <%= memoData[0].credate %></th>
+            </tr>
+            <tr>
+              <th class="content-table-tbody__modidate">수정 날짜 : <%= memoData[0].modidate %></th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+.header .header__title {
+  font-family: "Bowlby One SC", cursive;
+  font-size: 30px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+.memo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.memo .memo__memo-list {
+  display: block;
+  width: 500px;
+  background-color: #7fb3ff;
+  border-radius: 5px;
+}
+
+.memo-list .memo-list__title-column {
+  padding: 5px 0px 5px 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #efefef;
+  font-size: 20px;
+  font-family: "Comfortaa", cursive;
+  color: #693726;
+}
+.memo-list .memo-list__title-column:hover {
+  background-color: white;
+  color: violet;
+}
+.memo-list:first-child:first-child {
+  background-color: black;
+  border-top: 4px solid black;
+}
+
+/*  */
+
+
+.control-buttons {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 2px;
+}
+
+.control-buttons .control-buttons__button-column {
+  padding: 5px;
+  border: 1px solid skyblue;
+  border-radius: 5px;
+}
+
+.control-buttons .control-buttons__button-column:hover {
+  color: white;
+  background-color: skyblue;
+}
+
+.control-button {
+  margin-bottom: 2px;
+}
+
+.control-button .control-button__button-column {
+  padding: 5px;
+  border: 1px solid skyblue;
+  border-radius: 5px;
+}
+
+.control-button .control-button__button-column:hover {
+  color: white;
+  background-color: skyblue;
+}
+
+.page-button {
+    color: rgb(75, 50, 50);
+  }
+
+.page-button:hover {
+  color: white;
+  background-color: skyblue;
+}
+
+.page-number-selected-color{
+    color: white;
+    background-color: black;
+}
+
+.page-link{
+    display: flex;
+    justify-content: flex-start;
+    
+}

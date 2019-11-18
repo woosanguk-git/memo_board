@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>메모장</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body id="js-index-body">
+    <header class="header">
+      <a href="/"><h1 class="header__title title">MEMO NOTE</h1></a>
+    </header>
+
+    <div class="memo">
+      <div class="control-button">
+        <a href="create"
+          ><button class="control-button__button-column">글쓰기</button></a
+        >
+      </div>
+      <ul class="memo__memo-list memo-list">
+        <% for(let i = 0; i < memo.length;i++){ %>
+        <a href="<%=memo[i].id%>">
+          <li class="memo-list__title-column"><%=memo[i].title %></li>
+        </a>
+        <% } %>
+      </ul>
+      <div class="page-link">
+        <a href="/?page=<%= currentPage - 1 %>"><button class="page-button"><</button></a> 
+      <% for ( let i = 0; i < endPage ; i++){ %>
+      <a href="/?page=<%= i+1 %>"><button class="page-button js-page-number-button" value="<%=i+1%>"><%=i+1%></button></a>
+      <% } %>
+      <a href="/?page=<%= currentPage + 1 %>"><button class="page-button">></button></a> 
+      </div>
+    </div>
+    <script src="/lib/page.js"></script>
+  </body>
+</html>

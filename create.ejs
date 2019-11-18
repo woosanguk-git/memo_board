@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>글쓰기</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <h1>MEMO NOTE</h1>
+    
+    <form action="/create_process" method="post">
+      <p><input type="text" name="title" placeholder="제목" /></p>
+      <p>
+        <textarea
+          name="content"
+          placeholder="내용"
+          cols="40"
+          rows="20"
+        ></textarea>
+      </p>
+      <p><input type="submit" value="글생성"></p>
+    </form>
+  </body>
+</html>
