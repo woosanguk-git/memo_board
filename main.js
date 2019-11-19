@@ -13,13 +13,13 @@ mysql_dbc.db_open(db);
 
 const app = http.createServer(function(request, response) {
   const _url = request.url;
-  console.log(`_url = ${_url}`);
+  // console.log(`_url = ${_url}`);
   const queryData = url.parse(_url, true).query;
 
   const pathname = url.parse(_url, true).pathname;
-  console.log(queryData);
-  console.log(queryData.page);
-  console.log(`pathname = ${pathname}`);
+  // console.log(queryData);
+  // console.log(queryData.page);
+  // console.log(`pathname = ${pathname}`);
   if (pathname != "/favicon.ico") {
     if (pathname === "/") {
       let body = "";
@@ -164,6 +164,9 @@ const app = http.createServer(function(request, response) {
         console.log(updateMemoData);
         const updateQuery = `UPDATE board SET title ='${updateMemoData.title}', content = '${updateMemoData.content}', modidate = NOW() WHERE id = ${updateMemoData.memo_id}`;
         db.query(updateQuery, function(error, data) {
+          if(error){
+            throw error;
+          }
           response.writeHead(302, { Location: "/?page=1" });
           response.end();
         });
@@ -174,6 +177,9 @@ const app = http.createServer(function(request, response) {
       const query = `SELECT id,title,content, DATE_FORMAT(credate, '%Y-%m-%d') as credate, DATE_FORMAT(modidate, '%Y-%m-%d') as modidate FROM board where id = '${memoId}'`;
       fs.readFile(__dirname + "/memo.ejs", "utf-8", function(error, memoHTML) {
         db.query(query, function(error, data) {
+          if(error){
+            throw error;
+          }
           response.writeHead(200, { "context-type": "text/html" });
           response.write(ejs.render(memoHTML, { memoData: data }));
           // console.log(`------\n${memoData[0].id}`);
